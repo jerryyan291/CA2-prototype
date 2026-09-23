@@ -8,17 +8,12 @@ from sklearn.linear_model import LinearRegression
 
 # CHANGE THIS LINE. Use your own column names. Do not leave the words PASTE / HERE.
 # Do not add Displacement_cc. Empty engine cc will crash training.
-FEATURES = ['paste', 'your', 'feature', 'here']         # Example: ["Manufacture_Year", "Mileage_km"]
+FEATURES = ["Manufacture_Year", "Mileage_km", "Brand", "Horsepower_PS"]         # Example: ["Manufacture_Year", "Mileage_km"]
 RANDOM_STATE = 42   # public demo — does not need to match your Student ID
 
 @st.cache_data
 def load_and_train():
     df = pd.read_csv("Lab04_hk_car_price.csv")
-    st.write("=== df.columns ===")
-    st.write(df.columns.tolist())
-    st.write("=== FEATURES ===")
-    st.write(FEATURES)
-
     X_all = df[FEATURES].copy()
     y_all = df["Price_HKD"]
 
