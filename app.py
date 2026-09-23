@@ -14,6 +14,11 @@ RANDOM_STATE = 42   # public demo — does not need to match your Student ID
 @st.cache_data
 def load_and_train():
     df = pd.read_csv("Lab04_hk_car_price.csv")
+    st.write("=== df.columns ===")
+    st.write(df.columns.tolist())
+    st.write("=== FEATURES ===")
+    st.write(FEATURES)
+
     X_all = df[FEATURES].copy()
     y_all = df["Price_HKD"]
 
